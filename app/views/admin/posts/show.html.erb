@@ -1,0 +1,44 @@
+<h1>物件詳細</h1>
+
+<table>
+    <thread>
+        <tr>
+            <th>店舗名</th>
+            <th>企業名</th>
+            <th>最寄り駅</th>
+            <th>都道府県</th>
+            <th>住所</th>
+            <th>業種</th>
+            <th>階層</th>
+            <th>面積</th>
+            <th>賃料</th>
+            <th>共益費</th>
+            <th>総賃料</th>
+            <th>坪単価</th>
+            <th>保証金</th>
+            <th>造作譲渡金額</th>
+        </tr>
+    </thread>
+
+    <tbody>
+        <% @posts.each do |post| %>
+            <tr>
+                <tb><%= post.name %></tb>
+                <tb><%= post.company %></tb>
+                <tb><%= post.station %></tb>
+                <tb><%= post.prefuctures %></tb>
+                <tb><%= post.address %></tb>
+                <tb><%= post.industry %></tb>
+                <tb><%= post.floor %></tb>
+                <tb><%= post.area %></tb>
+                <tb><%= post.rent %></tb>
+                <tb><%= post.common %></tb>
+                <tb><%= post.deposit %></tb>
+                <tb><%= post.features %></tb>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to("物件一覧へ戻る", "/admin")%>
+<%= link_to("編集",edit_admin_post_path	)%>

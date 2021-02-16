@@ -1,0 +1,4 @@
+<h1>物件一覧</h1>
+<% @posts.each do |post| %>
+<h3><%= link_to(post.name,"/admin/posts/#{post.id}") %></h3>
+<% end %>

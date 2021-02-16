@@ -1,0 +1,44 @@
+<h1>物件詳細</h1>
+
+<table>
+    <thread>
+        <tr>
+            <th>店舗名</th>
+            <th>企業名</th>
+            <th>最寄り駅</th>
+            <th>都道府県</th>
+            <th>住所</th>
+            <th>業種</th>
+            <th>階層</th>
+            <th>面積</th>
+            <th>賃料</th>
+            <th>共益費</th>
+            <th>総賃料</th>
+            <th>坪単価</th>
+            <th>保証金</th>
+            <th>造作譲渡金額</th>
+        </tr>
+    </thread>
+
+    <tbody>
+        <% @users_posts.each do |users_post| %>
+            <tr>
+                <tb><%= users_post.name %></tb>
+                <tb><%= users_post.company %></tb>
+                <tb><%= users_post.station %></tb>
+                <tb><%= users_post.prefuctures %></tb>
+                <tb><%= users_post.address %></tb>
+                <tb><%= users_post.industry %></tb>
+                <tb><%= users_post.floor %></tb>
+                <tb><%= users_post.area %></tb>
+                <tb><%= users_post.rent %></tb>
+                <tb><%= users_post.common %></tb>
+                <tb><%= users_post.deposit %></tb>
+                <tb><%= users_post.features %></tb>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<%= link_to("物件一覧へ戻る", '/users_posts/index')%>
+<%= link_to("編集","/users_posts/#{@users_post.id}/edit")%> 

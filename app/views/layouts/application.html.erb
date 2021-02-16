@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RealEstates</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <% if user_signed_in? %>
+   <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <li>
+      <%= link_to("トップ","/") %>
+    </li>
+
+    <li>
+      <%= link_to("物件条件の登録",new_users_post_path) %>
+    </li>
+
+    <li>
+      <%= link_to("物件条件の確認","/users_posts") %>
+    </li>
+
+    <li>
+      <%= link_to("マッチした物件の確認","/") %>
+    </li>
+
+    <li>
+      <%= link_to("お問い合わせ","/") %>
+    </li>
+
+  <% end %>
+
+<% if current_user && current_user.admin? %>
+
+    <li>
+      <%= link_to("物件登録", "/admin/posts/new") %>
+    </li>
+    
+    <li>
+      <%= link_to("物件一覧", "/admin/posts") %>
+    </li>
+
+  <% end %>
+
+    <%= yield %>
+
+  </body>
+</html>
