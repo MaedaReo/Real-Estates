@@ -1,75 +1,75 @@
 <%= form_for @users_posts,url:{controller: "users_posts", action: "update"} do |f| %>
 
-<div class="field">
-  <%= f.label "店舗名" %>
-  <%= f.text_field :name %>
-</div>
+  <div class="field">
+    <%= f.label "店舗名" %>
+    <%= f.text_field :name %>
+  </div>
 
-<div class="field">
-  <%= f.label "企業名" %>
-  <%= f.text_field :company %>
-</div>
+  <div class="field">
+    <%= f.label "企業名" %>
+    <%= f.text_field :company %>
+  </div>
 
-<div class="field">
-  <%= f.label "最寄り駅" %>
-  <%= f.text_field :station %>
-</div>
+  <div class="field">
+    <%= f.label "最寄り駅" %>
+    <%= f.text_field :station %>
+  </div>
 
-<div class="field">
-  <%= f.label "都道府県" %>
-  <%= f.text_field :prefuctures %>
-</div>
+  <div class="field">
+    <%= f.label "都道府県" %>
+    <%= f.text_field :prefuctures %>
+  </div>
 
-<div class="field">
-  <%= f.label "住所" %>
-  <%= f.text_field :address %>
-</div>
+  <div class="field">
+    <%= f.label "住所" %>
+    <%= f.text_field :address %>
+  </div>
 
-<div class="field">
-  <%= f.label "業種" %>
-  <%= f.text_field :industry %>
-</div>
+  <div class="field">
+    <%= f.label "業種" %>
+    <%= f.text_field :industry %>
+  </div>
 
-<div class="field">
-  <%= f.label "階層" %>
-  <%= f.text_field :floor %>F
-</div>
+  <div class="field">
+    <%= f.label "階層" %>
+    <%= f.text_field :floor %>F
+  </div>
 
-<div class="field">
-  <%= f.label "面積" %>
-  <%= f.text_field :area %>坪 
-</div>
+  <div class="field">
+    <%= f.label "面積" %>
+    <%= f.text_field :area %>坪 
+  </div>
 
-<div class="field">
-  <%= f.label "賃料" %>
-  <%= f.text_field :rent %>円（税抜）
-</div>
+  <div class="field">
+    <%= f.label "賃料" %>
+    <%= f.text_field :rent %>円（税抜）
+  </div>
 
-<div class="field">
-  <%= f.label "共益費" %>
-  <%= f.text_field :common %>円（税抜）
-</div>
+  <div class="field">
+    <%= f.label "共益費" %>
+    <%= f.text_field :common %>円（税抜）
+  </div>
 
-<div class="field">
-  <p>合計</p>
-</div>円（税抜）
+  <div class="field">
+    <p>合計</p>
+  </div>円（税抜）
 
-<div class="field">
-  <p>坪単価</p>
-</div>円（税抜）
+  <div class="field">
+    <p>坪単価</p>
+  </div>円（税抜）
 
-<div class="field">
-  <%= f.label "保証金（敷金）" %>
-  <%= f.text_field :deposit %>円
-</div>
+  <div class="field">
+    <%= f.label "保証金（敷金）" %>
+    <%= f.text_field :deposit %>円
+  </div>
 
-<div class="field">
-  <%= f.label "造作譲渡金" %>
-  <%= f.text_field :features %>円（税抜）
-</div>
+  <div class="field">
+    <%= f.label "造作譲渡金" %>
+    <%= f.text_field :features %>円（税抜）
+  </div>
 
-</div><%= submit_tag "更新する" %>
+<%= submit_tag "更新する" %>
 
 <% end %>
 
-<%= button_to "削除", "/users_posts", method: :delete %>
+<%= button_to "削除","/users_posts/#{@users_posts.id}", method: :delete %>

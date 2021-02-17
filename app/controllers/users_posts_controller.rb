@@ -29,7 +29,7 @@ class UsersPostsController < ApplicationController
     def destroy
         @users_post = Userspost.find_by(user_id: current_user.id, id: params[:id])
         @users_post.destroy
-        redirect_to("/users_posts/index")
+        redirect_to("/users_posts")
     end
 
     def create
@@ -39,7 +39,7 @@ class UsersPostsController < ApplicationController
 
     private
         def users_posts_params
-            params.require(:userspost).permit(:user_id,:name, :company, :station, :prefuctures, :address, :industry, :floor, :area, :rent, :common, :deposit, :features)
+            params.require(:usersposts).permit(:id,:user_id,:name, :company, :station, :prefuctures, :address, :industry, :floor, :area, :rent, :common, :deposit, :features)
         end
   
         def if_not_admin
